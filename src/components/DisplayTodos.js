@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeTodos, completeTodos } from "../redux/reducer";
 
 const DisplayTodos = () => {
-  const { todo: todos } = useSelector((state) => state)
-  const dispatch = useDispatch()
+  const { todo: todos } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   return (
     <div className="displaytodos">
-      <ul>
+      <div className="grid-container">
         {todos.length > 0 &&
           todos.map((item) => (
-            <li key={item.id} className={`card ${item.completed ? 'completed-task' : ''}`}>
+            <div
+              key={item.id}
+              className={`card ${item.completed ? "completed-task" : ""}`}
+            >
               <div>{item.task}</div>
               <div>{item.name}</div>
               <div>{item.email}</div>
@@ -18,16 +22,16 @@ const DisplayTodos = () => {
               <div className="btns">
                 {!item.completed && (
                   <button onClick={() => dispatch(completeTodos(item.id))}>
-                  Mark Completed
-                </button>
+                    Mark Completed
+                  </button>
                 )}
                 <button onClick={() => dispatch(removeTodos(item.id))}>
                   Delete
                 </button>
               </div>
-            </li>
+            </div>
           ))}
-      </ul>
+      </div>
     </div>
   );
 };
