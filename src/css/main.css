@@ -1,21 +1,20 @@
-h2{
+h2 {
   font-family: fantasy;
 }
 
 body {
-  font-family: cursive;
-  background-color: #BBC3A4; 
-  margin: 0;
-  padding: 0;
+  font-family: sans-serif;
+  background-color: #bbc3a4;
+  margin: 20px;
+  padding: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .container {
-  background-color: #ffffff; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -23,32 +22,12 @@ body {
 }
 
 .displaytodos {
-  max-width: 800px; 
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.buttons button {
-  font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.buttons button:hover {
-  background-color: black;
+  max-width: auto;
 }
 
 .todo-input {
-  width: 70%; 
-  margin: 0 auto; 
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
@@ -65,21 +44,26 @@ body {
   border-radius: 5px;
 }
 
-
-
 .card-container {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
 }
 
 .card {
-  flex: 0 1 calc(48% - 10px); 
+  border: 2px Dashed yellow;
+  flex: 0 1 calc(48% - 10px);
   background-color: white;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .card-content {
@@ -87,6 +71,7 @@ body {
 }
 
 .btns button {
+  transition: background-color 2s ease ;
   margin-right: 5px;
   background-color: #e53935;
   color: white;
@@ -97,36 +82,39 @@ body {
 }
 
 .btns button:hover {
-  background-color: #c62828;
+  background-color: black;
 }
 
 .completed {
   color: green;
   font-weight: bold;
 }
+.card > div {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
 
 textarea {
-  width: 70%; 
-  margin: auto; 
+  width: 70%;
+  margin: auto;
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  overflow: hidden; 
-  box-sizing: border-box; 
+  overflow: hidden;
+  box-sizing: border-box;
   height: 50px;
 }
 
-
 .completed-task {
+  background-color: #d9ffd9;
   text-decoration: line-through;
 }
 
-
-.in{
-  width: 70%; 
-  margin:  auto; 
+.in {
+  width: 70%;
+  margin: auto;
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
@@ -135,23 +123,22 @@ textarea {
   height: 50px;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+}
+.card {
+  transition: transform 0.3s ease-in-out;
+}
 
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
