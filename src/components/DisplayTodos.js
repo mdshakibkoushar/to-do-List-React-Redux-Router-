@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeTodos, completeTodos } from "../redux/reducer";
+import { removeTodos, completeTodos } from "../redux/todoReducer";
 
 const DisplayTodos = () => {
   const { todo: todos } = useSelector((state) => state);
