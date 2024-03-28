@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addTodos } from "../redux/reducer";
+import { addTodos } from "../redux/todoReducer";
 import { motion } from "framer-motion";
 
 const Todos = () => {
