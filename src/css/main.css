@@ -3,7 +3,8 @@ h2 {
 }
 
 body {
-  font-family: sans-serif;
+  background: linear-gradient(to top, #66ff99 0%, #ff99cc 100%);
+/*   font-family: sans-serif; */
   background-color: #bbc3a4;
   margin: 20px;
   padding: 10px;
@@ -39,6 +40,7 @@ body {
   background-color: #4caf50;
   color: white;
   border: none;
+  font-size: normal;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
@@ -82,6 +84,9 @@ body {
 }
 
 .btns button:hover {
+  background-color: black;
+}
+.add-btn:hover{
   background-color: black;
 }
 
